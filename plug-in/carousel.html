@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>轮播</title>
+<style>
+.carousel{position: relative;margin:0 auto;overflow: hidden;}
+.carousel .carousel-indicators{position: absolute;z-index: 1;left: 50%;width: 60%;margin-left: -30%;text-align: center;bottom: 10px;padding-left: 0;margin-left: -30%;text-align: center;}
+.carousel .carousel-indicators>li{display:inline-block;width:10px;height: 10px;background:none;border-radius: 10px;border:1px solid #fff;}
+.carousel .carousel-indicators>li.active{background: #fff;}
+.carousel .carousel-indicators>li:hover{cursor: pointer}
+.carousel .carousel-inner {position: relative;}
+.carousel .carousel-inner>.item{position: relative;float: left}
+.carousel .carousel-inner>.item img{width:100%;height:100%;}
+.carousel .carousel-inner>.item.active{display: block;left:0px;}
+.carousel .carousel-control{position: absolute;top:0;width:30px;height:100%;padding:0px 20px;font-size:50px;color:#fff;}
+
+.carousel .carousel-control.left{left:0px;}
+.carousel .carousel-control.right{right:0px;}
+.carousel .carousel-control.left span,.carousel-control.right span{position: absolute;top:50%;margin-top:-15px;}
+.carousel .carousel-control.left span:hover,.carousel-control.right span:hover{cursor: pointer}
+}
+</style>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/carousel.js"></script>
+</head>
+<body>
+<div class="carousel">
+    <ol class="carousel-indicators">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item">
+            <img src="http://placehold.it/900x500/39CCCC/ffffff&text=this+test+one"/>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/900x500/3c8dbc/ffffff&text=this+test+two"/>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/900x500/f39c12/ffffff&text=this+test+three"/>
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/900x500/483cec/ffffff&text=this+test+four"/>
+        </div>
+    </div>
+    <div class="left carousel-control"><span><</span></div>
+    <div class="right carousel-control"><span>></span></div>
+</div>
+</body>
+<script type="text/javascript">
+    $('.carousel').carousels({width:"900",height:"500"});
+</script>
+</html>

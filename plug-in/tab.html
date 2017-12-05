@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tab</title>
+<style>
+    .tab{margin:10px;}
+    .tab .tab-title{overflow: auto;margin:0;margin-right:-11px;padding:0;border-bottom:1px solid #ddd;font-size:14px;}
+    .tab .tab-title li{float:left;margin-right:5px;text-align: center;list-style-type: none;border:1px solid #ddd;border-top-left-radius: 5px;border-top-right-radius: 5px;border-bottom: 0px;}
+    .tab ul.pull-right li{float:right;margin:0 0 0 5px;}
+    .tab .tab-title li>a{display: block;padding: 10px 15px;background: #ececec;color:#333;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+    .tab .tab-title li>a:hover{color:#fff;text-decoration: none;background:#3c8dbc;cursor: pointer;}
+    .tab .tab-title li.actived>a{color:white;background-color:#3c8dbc;}
+    .tab .tab-content{display:none;width:100%;height:auto;min-height:400px;padding:10px 0 0 10px;border:1px solid #ddd;border-top:none;}
+</style>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/tab.js"></script>
+</head>
+<body>
+<div class="tab">
+    <ul class="tab-title">
+        <li><a>html</a></li>
+        <li  class="actived"><a>css</a></li>
+        <li><a>js</a></li>
+    </ul>
+    <div class="tab-content">
+        html
+    </div>
+    <div class="tab-content actived">
+        css
+    </div>
+    <div class="tab-content">
+        js
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    $('.tab').tabs();
+</script>
+</html>
