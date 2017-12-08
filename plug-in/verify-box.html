@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            .verify{
+                position: relative;
+                width:300px;
+                height:50px;
+                margin:20px auto 0px;
+                line-height: 50px;
+                background: #ddd;
+                border:1px solid #ddd;
+                color:#999;
+
+            }
+            .verify-box{
+                position:absolute;
+                z-index:1;
+                width:0px;
+                height: 100%;
+                background: #0f0;
+               
+            }
+            .verify-btn{
+                position: absolute;
+                z-index:1;
+                top:0px;
+                width:50px;
+                height: 100%;
+                background: #fff;
+                color: #999;
+                text-align: center;
+                cursor: pointer;
+            }
+            .verify>span{
+                position: absolute;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/verify.js"></script>
+    </head>
+    <body>
+        <div class="verify">
+            <div class="verify-box">
+            </div>
+            <span>按住滑块，拖动到最右边</span>
+            <div class="verify-btn">&gt;&gt;</div>
+        </div>
+    </body>
+    <script>
+       $('.verify').verify({"width":"300px","height":"50px"});
+    </script>
+</html>

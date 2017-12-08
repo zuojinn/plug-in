@@ -115,7 +115,8 @@
                 // 获取第一个图片 节点对象
                 var firstImg = items.first().clone();
                 carouselInner.append(firstImg).width(carouselInner.find('.item').size()*firstPic.width());
-                itemSize>1 && play();
+
+                setTimeout(function(){itemSize>1 && play();},1000)
             }
             init();
 
