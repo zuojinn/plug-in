@@ -27,7 +27,7 @@
                         dx = e.pageX - os.left;
                         if(dx<differ){
                             dx = 0;
-                            verifySpan.html('按住滑块，拖动到最右边')
+                            verifySpan.html('按住滑块，拖动到最右边');
                         }else if(dx>=differ){
                             dx = differ;
                             verifySpan.css({'z-index':2,"color":"#fff"});

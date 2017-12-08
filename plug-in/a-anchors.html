@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>a标签锚点</title>
+    <link href="myStyle.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="js/verify.js"></script> -->
+    <style>
+        body{
+    font-size:12px;
+    font-family:"Î¢ÈíÑÅºÚ";
+}
+.profile_left {width:80%;margin-left:7%;  float:left;  }
+.profile_right { width:12%; float:left; background:#fff; height:900px; margin-left:1%; position:fixed; right:0; top:20px;}
+.profile_right_cnt { width:100%; height:auto; background:url(images/profile_menu_bg1.png) -23px 0 repeat-y; float:left;}
+.profile_right_cnt p{ width:100%;color:#333; float:left;  font-weight:bold; background: url(images/profile_menu_bg.png) 0 -41px no-repeat; padding-left:18px; margin:6px 0}
+.profile_right_cnt p.sec{ background:none; position:relative; height:18px; margin:4px 0}
+.profile_right_cnt p.sec:hover{ background:none;}
+
+.profile_right_cnt a.sec{ width:100%;color:#333; float:left; position:absolute;top:0; left:0px;  font-weight:normal; background: url(images/profile_menu_bg.png) 0 -80px no-repeat; padding-left:30px; margin:2px 0}
+
+.profile_right_cnt a.sec:hover{ color:#c00; cursor:pointer;background: url(images/profile_menu_bg.png) 0 -61px no-repeat;}
+.profile_right_cnt p a{color:#333;}
+.profile_right_cnt p:hover{ color:#03529E; cursor:pointer;background: url(images/profile_menu_bg.png) 0 -22px no-repeat;}
+.profile_right_cnt p:hover a{color:#c00;}
+.profile_right_cnt div.profile_right_cnt_first{ width:100%; float:left;  font-weight:bold; background: url(images/profile_menu_bg.png) 0 -6px no-repeat; padding-left:12px; height:12px; margin-bottom:10px;}
+.profile_right_cnt div.profile_right_cnt_last{ width:100%; float:left;  font-weight:bold; background: url(images/profile_menu_bg.png) 0 -6px no-repeat; padding-left:12px; height:12px; margin-top:10px;}
+.profile_right_cnt ul{ float:left; margin-bottom:10px; margin-top:10px;}
+.profile_right_cnt ul li{ float:left; padding-left:18px; width:100%; line-height:23px;}
+.profile_right_cnt ul li a{color:#333}
+.profile_right_cnt ul li a:hover{color:#03529E}
+.profile_right_cnt .floatnav_a_cur { color:#03529E; cursor:pointer;background: url(images/profile_menu_bg.png) 0 -22px no-repeat;}
+.profile_right_cnt .floatnav_a_cur a { color: #03529E;}
+
+.profile_right_cnt .floatnav_a_cur a.sec{ color: #03529E;background: url(images/profile_menu_bg.png) 0 -59px no-repeat;}
+    </style>
+</head>
+<body>
+<div class="profile_right">
+    <div class="profile_right_cnt" id="floatnav">
+        <div class="profile_right_cnt_first"></div>
+        <p class="floatnav_a_cur"><a  id="a11" href="#a1">一般信息</a></p>
+        <p class="sec"><a class="sec"  id="a22" href="#a2">分类</a></p>
+        <p class="sec"><a class="sec" id="a33" href="#a3">商店分类</a></p>
+        <p class="sec"><a class="sec" id="a44" href="#a4">物品属性与状况</a></p>
+        <p class="sec"><a class="sec" id="a55" href="#a5">模板设置</a></p>
+        <p><a id="a66" href="#a6">拍卖</a></p>
+        <p><a id="a77" href="#a7">付款</a></p>
+        <p><a id="a88" href="#a8">买家要求</a></p>
+        <p><a id="a99" href="#a9">退货政策</a></p>
+        <div class="profile_right_cnt_last"></div>
+    </div>
+</div>
+<div class="profile_left">
+    <div  style="height:300px">
+        <a class="black-font-18" id="a1">一般信息</a>
+    </div>
+    <div style="height:300px">
+        <a class="black-font-18" id="a2">分类</a>
+    </div>
+    <div style="height:300px">
+        <a class="black-font-18" id="a3">商店分类</a>
+    </div>
+    <div style="height:300px">
+        <a class="black-font-18" id="a4">物品属性与状况</a>
+    </div>
+    <div style="height:300px">
+        <a class="black-font-18" id="a5">模板设置</a>
+    </div><div style="height:300px">
+        <a class="black-font-18" id="a6">拍卖</a>
+    </div>
+    <div style="height:300px">
+        <a class="black-font-18" id="a7">付款</a>
+    </div>
+    <div style="height:300px">
+        <a class="black-font-18" id="a8">买家要求</a>
+    </div>
+    <div style="height:300px">
+        <a class="black-font-18" id="a9">退货政策</a>
+    </div>
+</div>
+</body>
+<script>
+    $(window).scroll(function(){
+        //为页面添加页面滚动监听事件
+        var wst =  $(window).scrollTop(); //滚动条距离顶端值
+        for (i=1; i<$('#floatnav p').length+1; i++){             //加循环
+            if($("#a"+i).offset().top<=wst){ //判断滚动条位置
+                $('#floatnav p').removeClass('floatnav_a_cur'); //清除c类
+                $("#a"+i+i).parent().addClass('floatnav_a_cur');    //给当前导航加c类
+            }
+        }
+    })
+    $('#floatnav p').click(function(){
+        $(this).addClass("floatnav_a_cur").siblings().removeClass('floatnav_a_cur');    //给当前导航加c类
+    });
+</script>
+</html>
