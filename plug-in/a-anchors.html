@@ -3,9 +3,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>a标签锚点</title>
-    <link href="myStyle.css" rel="stylesheet">
+    <!-- <link href="myStyle.css" rel="stylesheet"> -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <!-- <script src="js/verify.js"></script> -->
+    <script src="js/profile.js"></script>
     <style>
         body{
     font-size:12px;
@@ -37,63 +37,54 @@
     </style>
 </head>
 <body>
-<div class="profile_right">
-    <div class="profile_right_cnt" id="floatnav">
-        <div class="profile_right_cnt_first"></div>
-        <p class="floatnav_a_cur"><a  id="a11" href="#a1">一般信息</a></p>
-        <p class="sec"><a class="sec"  id="a22" href="#a2">分类</a></p>
-        <p class="sec"><a class="sec" id="a33" href="#a3">商店分类</a></p>
-        <p class="sec"><a class="sec" id="a44" href="#a4">物品属性与状况</a></p>
-        <p class="sec"><a class="sec" id="a55" href="#a5">模板设置</a></p>
-        <p><a id="a66" href="#a6">拍卖</a></p>
-        <p><a id="a77" href="#a7">付款</a></p>
-        <p><a id="a88" href="#a8">买家要求</a></p>
-        <p><a id="a99" href="#a9">退货政策</a></p>
-        <div class="profile_right_cnt_last"></div>
+<div class="profile">
+    <div class="profile_right">
+        <div class="profile_right_cnt">
+            <div class="profile_right_cnt_first"></div>
+            <p class="floatnav_a_cur"><a  class="a-anchors">一般信息</a></p>
+            <p class="sec"><a class="sec a-anchors">分类</a></p>
+            <p class="sec"><a class="sec a-anchors">商店分类</a></p>
+            <p class="sec"><a class="sec a-anchors">物品属性与状况</a></p>
+            <p class="sec"><a class="sec a-anchors">模板设置</a></p>
+            <p><a class="a-anchors">拍卖</a></p>
+            <p><a class="a-anchors">付款</a></p>
+            <p><a class="a-anchors">买家要求</a></p>
+            <p><a class="a-anchors">退货政策</a></p>
+            <div class="profile_right_cnt_last"></div>
+        </div>
     </div>
-</div>
-<div class="profile_left">
-    <div  style="height:300px">
-        <a class="black-font-18" id="a1">一般信息</a>
-    </div>
-    <div style="height:300px">
-        <a class="black-font-18" id="a2">分类</a>
-    </div>
-    <div style="height:300px">
-        <a class="black-font-18" id="a3">商店分类</a>
-    </div>
-    <div style="height:300px">
-        <a class="black-font-18" id="a4">物品属性与状况</a>
-    </div>
-    <div style="height:300px">
-        <a class="black-font-18" id="a5">模板设置</a>
-    </div><div style="height:300px">
-        <a class="black-font-18" id="a6">拍卖</a>
-    </div>
-    <div style="height:300px">
-        <a class="black-font-18" id="a7">付款</a>
-    </div>
-    <div style="height:300px">
-        <a class="black-font-18" id="a8">买家要求</a>
-    </div>
-    <div style="height:300px">
-        <a class="black-font-18" id="a9">退货政策</a>
+    <div class="profile_left">
+        <div  style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;一般信息</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;分类</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;商店分类</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;物品属性与状况</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;模板设置</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;拍卖</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;付款</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;买家要求</h3></a>
+        </div>
+        <div style="height:300px;border:1px solid #ececec;">
+            <a class="a-anchors"><h3>&nbsp;退货政策</h3></a>
+        </div>
     </div>
 </div>
 </body>
 <script>
-    $(window).scroll(function(){
-        //为页面添加页面滚动监听事件
-        var wst =  $(window).scrollTop(); //滚动条距离顶端值
-        for (i=1; i<$('#floatnav p').length+1; i++){             //加循环
-            if($("#a"+i).offset().top<=wst){ //判断滚动条位置
-                $('#floatnav p').removeClass('floatnav_a_cur'); //清除c类
-                $("#a"+i+i).parent().addClass('floatnav_a_cur');    //给当前导航加c类
-            }
-        }
-    })
-    $('#floatnav p').click(function(){
-        $(this).addClass("floatnav_a_cur").siblings().removeClass('floatnav_a_cur');    //给当前导航加c类
-    });
+    $('.profile').profile();
 </script>
 </html>
