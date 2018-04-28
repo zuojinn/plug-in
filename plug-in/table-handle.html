@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>table操作</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <div class="col col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">table 操作</h3>
+            </div>
+            <div class="panel-body">
+                <form>
+                    <div class="row">
+                        <div class="col col-md-2">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="">
+                                    <span class="input-group-addon" onclick="table.search(this)">搜索</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-3">
+                            <div class="form-group">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <th>序号</th>
+                                        <th>语言</th>
+                                        <th>操作</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>C#</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>C++</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>js</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Jquery</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>html</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>PHP</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Perl</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>PASCAL</td>
+                                            <td><a onclick="table.moveRow(this,'up')">上移</a>&nbsp;<a onclick="table.moveRow(this,'down')">下移</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>                 
+            </div>
+        </div>
+    </div>
+    <script>
+        var table = {
+            "search" : function(obj) {
+                var inputVal = $(obj).parent().find('input[type="text"]').val();
+                var str=/^\S+$/;
+                if(str.test(inputVal)){
+                    $('.table tbody>tr').hide().filter(':contains('+inputVal+')').show();
+                }else{
+                    $('.table tbody>tr').show();
+                }
+            },
+            "moveRow" : function(obj,val){
+                var $obj = $(obj);
+                var $list = $obj.parents('table');
+                var $tr = $obj.parents('tr');
+                if (val == "up") {
+                    $tr.fadeOut().fadeIn();
+                    $tr.prev().before($tr);
+                } else {
+                    $tr.fadeOut().fadeIn();
+                    $tr.next().after($tr);
+                }
+                $list.find('tbody tr').each(function (i, d)
+                {
+                    var $that = $(this);
+                    $that.children().eq(0).html(i + 1);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
