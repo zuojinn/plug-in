@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>推拉门改进</title>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<style>
+    .door{
+        width: 1000px;
+        margin: 0px auto;
+    }
+    .door>li{
+        float: left;
+        width: 20%;
+        height:500px;
+        list-style-type: none;
+    }
+    .door>li>img{
+        width:100%;
+        height:100%;
+    }
+    img:hover{
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<ul class="door">
+    <li>
+        <img src="images/han1.jpg">
+    </li>
+    <li>
+        <img src="images/han2.jpg">
+    </li>
+    <li>
+        <img src="images/han3.jpg">
+    </li>
+    <li>
+        <img src="images/han4.jpg">
+    </li>
+    <li>
+        <img src="images/han5.jpg">
+    </li>
+</ul>
+</body>
+<script type="text/javascript">
+    var li = $('ul.door>li');
+    li.hover(function () {
+        $(this).animate({'width':'60%'},0).siblings().animate({'width':'10%'},0)
+    },function(){
+        $('.door>li').animate({'width':'20%'},0)
+    })
+</script>
+</html>
