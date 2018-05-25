@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>验证输入的是否是数字及保留几位小数问题</title>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    正整数：<input type="text" oninput="validationNumber(this,0)" onpropertychange="validationNumber(this,0)"/>
+    保留一位小数：<input type="text" oninput="validationNumber(this,1)" onpropertychange="validationNumber(this,1)"/>
+    保留两位小数：<input type="text" oninput="validationNumber(this,2)" onpropertychange="validationNumber(this,2)"/>
+    保留三位小数：<input type="text" oninput="validationNumber(this,3)" onpropertychange="validationNumber(this,3)"/>
+</body>
+<script type="text/javascript">
+    function validationNumber(e,num) {
+        var regu = /^[0-9]+\.?[0-9]*$/;
+        if(e.value){
+            if(!regu.test(e.value)){
+                e.value = e.value.substring(0, e.value.length - 1);
+                e.focus();
+            }else{
+                if(e.value.indexOf('.')>-1){
+                    if(num == 0 || !num){
+                        e.value = e.value.substring(0, e.value.length - 1);
+                        e.focus();
+                    }
+                    if(e.value.split('.')[1] && e.value.split('.')[1].length > num ){
+                        e.value = e.value.substring(0, e.value.length - 1);
+                        e.focus();
+                    }
+                }
+                
+            }
+        }
+    }
+</script>
+</html>
