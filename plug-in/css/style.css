@@ -3,6 +3,7 @@
     font-family:"Î¢ÈíÑÅºÚ";
 }
 .profile_left {width:80%;margin-left:7%;margin-top:15px;float:left;  }
+.profile_left .panel-default>.panel-heading{background-color: #468dd2;color:#fff;}
 .profile_right { width:12%; float:left; background:#fff; height:900px; margin-left:1%; position:fixed; right:0; top:20px;}
 .profile_right_cnt { width:100%; height:auto; background:url(../images/profile_menu_bg1.png) -23px 0 repeat-y; float:left;}
 .profile_right_cnt p{ width:100%;color:#333; float:left;  font-weight:bold; background: url(../images/profile_menu_bg.png) 0 -41px no-repeat; padding-left:18px; margin:6px 0}
