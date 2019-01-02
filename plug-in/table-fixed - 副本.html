@@ -2,8 +2,27 @@
 <html>
 <head>
     <title>table 测试</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <style>
+        .table{
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            position: relative;
+        }
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            border-top: 1px solid #e7eaec;
+            line-height: 1.42857;
+            padding: 8px;
+            vertical-align: middle;
+        }
+        .table > thead > tr > th {
+            border-bottom: 1px solid #DDD;
+            text-align: center;
+        }
         thead{background-color:#999;color:#000;}  
         tr:nth-child(2n+1){background-color:#f2f2f2;}  
         thead,tbody tr {
@@ -13,7 +32,7 @@
     </style>
 </head>
 <body>
-<table cellpadding="0" cellspacing="0" border="0">    
+<table class="table">    
     <thead class="of-paging_head">  
         <tr><th>序号</th><th>内容</th><th>内容</th><th>内容</th></tr>  
     </thead>
